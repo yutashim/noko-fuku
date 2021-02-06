@@ -21,4 +21,18 @@ Ruby on Rails 5.2.4
  * ユーザー詳細表示機能
     * お店に対して投稿されたコメント一覧が表示される
     * お気に入り登録したお店の広告は別のページで表示される
- * 広告投稿機能    
+ * 広告投稿機能 
+ 　　
+   　　
+## カタログ設計
+    
+　https://docs.google.com/spreadsheets/d/1RiMBjgKxm8aeBtD8f08ma_zYpvrsid1E/edit#gid=1925441201   
+ 
+ ## テーブル定義
+    
+　https://docs.google.com/spreadsheets/d/1RiMBjgKxm8aeBtD8f08ma_zYpvrsid1E/edit#gid=1247845635
+    
+ ## ER図
+    
+　https://docs.google.com/spreadsheets/d/1RiMBjgKxm8aeBtD8f08ma_zYpvrsid1E/edit#gid=1816160013
+
