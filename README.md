@@ -35,4 +35,8 @@ Ruby on Rails 5.2.4
  ## ER図
     
 　https://docs.google.com/spreadsheets/d/1RiMBjgKxm8aeBtD8f08ma_zYpvrsid1E/edit#gid=1816160013
+　　
+  ## 画面遷移図
+    
+　https://docs.google.com/spreadsheets/d/1bGTSrQKmGEWH7Ybl3to32qo1ybYpm8BmUQ_fkTi7dCw/edit#gid=0
 
