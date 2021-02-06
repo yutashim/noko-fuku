@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## バージョン  
+Ruby 2.6.5  
+Ruby on Rails 5.2.4  
+  
+## 機能一覧　　
+  
+  ### 消費者ユーザー、事業者ユーザー共通
+ * 新規登録機能
+ * ログイン機能  
+ * ユーザー情報の編集、削除機能   
+ * お気に入り機能
+    
+  ### 消費者ユーザー向け
+ * ユーザー詳細表示機能
+    * お気に入り登録したお店の広告一覧が表示される
+ * コメント投稿機能
+    
+  ### 事業者ユーザー向け
+ * ユーザー詳細表示機能
+    * お店に対して投稿されたコメント一覧が表示される
+    * お気に入り登録したお店の広告は別のページで表示される
+ * 広告投稿機能    
