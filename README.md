@@ -52,4 +52,17 @@ Ruby on Rails 5.2.4
    * unicorn
    * mini_racer
    * capistrano
+   
+ ## 就職タームから使用する技術
+   
+   * コメント機能（編集や削除もできること。投稿失敗時にエラーメッセージをAjaxで出力する）
+     * お店に対するコメントで使用します  
+   * フォロー機能  
+     * お店同士のお気に入り機能（同モデル同士でフォロー、フォロワーの関係を生成）で使用します
+     
+ ## カリキュラム内から使用する技術
+   
+   * 次のgem, jQueryプラグインを使って、お店の住所の天気を表示してみたいと思います。
+     * https://github.com/taiki45/weather_jp    
+     * https://github.com/ninton/jquery.jpostal.js
 
