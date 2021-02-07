@@ -39,4 +39,17 @@ Ruby on Rails 5.2.4
   ## 画面遷移図
     
 　https://docs.google.com/spreadsheets/d/1bGTSrQKmGEWH7Ybl3to32qo1ybYpm8BmUQ_fkTi7dCw/edit#gid=0
+    
+ ## 画面ワイヤーフレーム
+    
+　https://docs.google.com/spreadsheets/d/10qFinOCj9aJTE8e27kO68EaIlOwEZZODZNZXI8j_FIc/edit#gid=0
+    
+ ## 使用予定Gem
+ 
+   * carrierwave
+   * mini_magick
+   * dotenv-rails
+   * unicorn
+   * mini_racer
+   * capistrano
 
