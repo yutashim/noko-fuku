@@ -1,0 +1,5 @@
+<%= form_with(scope: session, url: sessions_path, local: true) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.submit 'sign in'%>
+<% end %>
