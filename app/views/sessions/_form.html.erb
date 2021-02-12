@@ -1,0 +1,14 @@
+user: <%= User.first.email %><br>
+store: <%= Store.first.email %>
+<hr>
+<%= form_with(scope: session, url: sessions_path, local: true) do |f| %>
+  <div class="#">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="#">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <%= f.submit 'sign in'%>
+<% end %>
