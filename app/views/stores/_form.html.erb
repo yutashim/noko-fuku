@@ -1,0 +1,44 @@
+<%= form_with(model: store, local: true) do |form| %>
+  <% if store.errors.any? %>
+    <% store.errors.full_messages do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+  <div class="store_field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="store_field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="store_field">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+  <div class="store_field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+  <div class="store_field">
+    <%= form.label :icon %>
+    <%= form.file_field :icon %>
+  </div>
+  <div class="store_field">
+    <%= form.label :introduction %>
+    <%= form.text_area :introduction %>
+  </div>
+  <div class="store_field">
+    <%= form.label :postcode %>
+    <%= form.text_field :postcode  %>
+  </div>
+  <div class="store_field">
+    <%= form.label :prefecture %>
+    <%= form.text_field :prefecture %>
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+    <%= form.label :street_address %>
+    <%= form.text_field :street_address %>
+  </div>
+  <%= form.submit 'sign up'%>
+<% end %>
