@@ -4,3 +4,8 @@
 <% else %>
   <%= image_tag('https://placehold.jp/500x400.png') %>
 <% end %>
+<% if current_user && current_user != @store %>
+  <div id="favorite_field">
+    <%= render 'follow_form', store: @store, current_user: @current_user %>
+  </div>
+<% end %>
