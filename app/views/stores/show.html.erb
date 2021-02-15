@@ -1,2 +1,6 @@
 <%= @store.name %>
-<%= image_tag(@store.icon.url) if @store.icon.url %>
+<% if @store.icon.url %>
+  <%= image_tag(@store.icon.url) %>
+<% else %>
+  <%= image_tag('https://placehold.jp/500x400.png') %>
+<% end %>
