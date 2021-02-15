@@ -11,7 +11,8 @@ class Store < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }, uniqueness: true,
     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :password, presence: true, length: { maximum: 255 }
-  validates :postcode, length: { is: 7 }
+  # validates :postcode, length: { is: 7 }
+  mount_uploader :icon, StoreIconUploader
   has_secure_password
 
   private

@@ -3,10 +3,14 @@
   email = Faker::Internet.email
   User.create(
     name: name,
-    email: email
+    email: email,
+    password: 'password',
+    password_confirmation: 'password'
   )
   Store.create(
     name: "#{name}\'s store",
-    email: email
+    email: email,
+    password: 'password',
+    password_confirmation: 'password',
   )
 end
