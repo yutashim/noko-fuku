@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :current_user
   before_action :set_store
+  before_action :set_comment, only: [:edit, :update, :destroy]
 
   def create
     @comment = @current_user.comments.build(comment_params)
@@ -18,14 +19,17 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment.destroy
+    respond_to do |format|
+      flash.now[:notice] = 'コメントが削除されました'
+      format.js { render :index }
+    end
   end
 
   def edit
-    @comment = Comment.find(params[:id])
   end
 
   def update
-    @comment = Comment.find(params[:id])
     respond_to do |format|
       if @comment.update(comment_params)
         flash[:notice] = '編集しました'
@@ -38,6 +42,10 @@ class CommentsController < ApplicationController
   end
 
   private
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
   def set_store
     @store = Store.find(params[:store_id])
   end
