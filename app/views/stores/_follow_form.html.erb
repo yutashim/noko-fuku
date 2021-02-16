@@ -1,7 +1,15 @@
-<% cla = current_user.class.to_s %>
-<% val = {"User" => ['user_favorites', :user_id], "Store" => ['passive_follows', :follower_id]} %>
-<% if store.send(val[cla][0]).find_by(val[cla][1] => current_user.id) %>
-  <%= link_to 'お気に入り解除', store_favorite_path(store.id), method: :delete, remote: true %>
-<% else %>
-  <%= link_to 'お気に入り登録', store_favorites_path(id: store.id), method: :post, remote: true %>
+<% if current_user.class == Store %>
+  <% if store.passive_follows.find_by(follower_id: current_user.id) %>
+    <%= link_to 'お気に入り解除', store_favorite_path(store.id), method: :delete, remote: true %>
+  <% else %>
+    <%= link_to 'お気に入り登録', store_favorites_path(id: store.id), method: :post, remote: true %>
+  <% end %>
+<% end %>
+
+<% if current_user.class == User %>
+  <% if store.user_favorites.find_by(user_id: current_user.id)%>
+   <%= link_to 'お気に入り解除', user_favorite_path(store.id), method: :delete, remote: true %>
+  <% else %>
+    <%= link_to 'お気に入り登録', user_favorites_path(id: store.id), method: :post, remote: true %>
+  <% end %>
 <% end %>
