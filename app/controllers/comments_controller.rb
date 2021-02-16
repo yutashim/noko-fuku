@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         flash[:notice] = '投稿しました'
-        format.js { render :create }
+        format.js { render :index }
       else
         flash[:notice] = '投稿できませんでした'
         format.js { render :error }
@@ -18,6 +18,23 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    respond_to do |format|
+      if @comment.update(comment_params)
+        flash[:notice] = '編集しました'
+        format.js { render :index }
+      else
+        flash[:notice] = '保存できませんでした'
+        format.js { render :error }
+      end
+    end
   end
 
   private

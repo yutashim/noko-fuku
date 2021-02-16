@@ -9,10 +9,10 @@
     <%= render 'follow_form', store: @store, current_user: @current_user %>
   </div>
 <% end %>
+<h4 class="notice" style="color: green"></h4>
 <div class="comments_area">
   <%= render 'comments/index', comments: @comments %>
 </div>
 <% if current_user && current_user.class == User %>
-  <p class="notice" style="color: green;"></p>
   <%= render 'comments/form', store: @store, comment: @new_comment %>
 <% end %>

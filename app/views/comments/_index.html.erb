@@ -1,5 +1,12 @@
-<% comments.each do |cmt| %>
-  <div>
-    <%= cmt.content %>
-  </div>
-<% end %>
+<% current_user %>
+  <% comments.each do |cmt| %>
+  <% if c_id = cmt.id %>
+    <div id="comment_<%= c_id%>">
+      <%= cmt.content %>
+      <% if cmt.user == @current_user %>
+        <%= link_to '編集する', edit_store_comment_path(cmt.store_id, cmt.id), remote: true %>
+        <%= link_to '削除する'%>
+      <% end %>
+    </div>
+  <% end %>
+  <% end %>
