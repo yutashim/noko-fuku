@@ -1,6 +1,8 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show]
   def show
+    @comments = @store.comments
+    @new_comment = @store.comments.build
   end
 
   def new
