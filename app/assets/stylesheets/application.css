@@ -14,3 +14,12 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   background-image: url("/assets/top_bgimage.jpeg");
+   background-size: cover;
+ }
+
+ td {
+   background-color: rgba(245,245,245,0.9);
+ }
