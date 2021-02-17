@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  before_action :current_user
   before_action :set_user
+  before_action :prohibit_access, only: [:show]
   def new
     @user = User.new
   end
@@ -42,5 +44,11 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def prohibit_access
+    if @current_user != @user
+      redirect_to stores_path
+    end
   end
 end
