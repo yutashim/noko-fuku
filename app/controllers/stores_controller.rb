@@ -17,6 +17,7 @@ class StoresController < ApplicationController
   end
 
   def new
+    user_login?
     @store = Store.new
   end
 
