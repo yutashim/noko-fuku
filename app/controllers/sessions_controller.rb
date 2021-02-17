@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+
+  def home
+  end
+  
   def new
     user_login?
   end
