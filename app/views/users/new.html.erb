@@ -1,11 +1,2 @@
-<%= form_with(model: @user, local: true) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-  <%= form.label :password %>
-  <%= form.text_field :password %>
-  <%= form.label :password_confirmation %>
-  <%= form.password_field :password_confirmation %>
-  <%= form.submit 'sign_up' %>
-<% end %>
+<%= link_to 'お店の方はこちらから', new_store_path %>
+<%= render 'form', user: @user %>

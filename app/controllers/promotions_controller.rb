@@ -1,5 +1,13 @@
 class PromotionsController < ApplicationController
-  before_action :set_store, only: [:new, :create]
+  before_action :set_store, only: [:new, :create, :index]
+
+  def index
+    @promotions = @store.promotions
+    respond_to do |format|
+      format.js { :index }
+    end
+  end
+
   def new
     @promotion = Promotion.new
   end

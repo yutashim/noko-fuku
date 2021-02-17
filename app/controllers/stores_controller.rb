@@ -1,8 +1,19 @@
 class StoresController < ApplicationController
-  before_action :set_store, only: [:show]
+  before_action :set_store, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @stores = Store.all
+  end
+
   def show
+    @promotions = @store.promotions
     @comments = @store.comments.includes(:user)
     @new_comment = @store.comments.build
+  end
+
+  def mypage
+    @store = Store.find(params[:store_id])
+    @favorite_stores = @store.following_stores
   end
 
   def new
@@ -17,6 +28,23 @@ class StoresController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @store.update(store_params)
+      redirect_to store_path(@store.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @store.destroy
+    session.delete(:user_id)
+    redirect_to new_session_path
   end
 
   private

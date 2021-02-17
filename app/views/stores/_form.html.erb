@@ -1,3 +1,4 @@
+<%= link_to '退会する', store_path(store.id), method: :delete %><br>
 <%= form_with(model: store, local: true, class:'m-3') do |form| %>
   <% if store.errors.any? %>
     <% store.errors.full_messages do |msg| %>
