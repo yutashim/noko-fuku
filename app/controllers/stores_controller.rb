@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
-  before_action :prohibit_access, only: [:mypage]
+  before_action :prohibit_access, only: [:mypage, :edit, :create, :destroy]
 
   def index
     @stores = Store.all
@@ -59,7 +59,7 @@ class StoresController < ApplicationController
   end
 
   def prohibit_access
-    @store = Store.find(params[:store_id])
+    @store = Store.find(params[:store_id]) if !@store
     if @current_user != @store
       redirect_to stores_path
     end

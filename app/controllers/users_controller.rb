@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user
-  before_action :prohibit_access, only: [:show]
+  before_action :prohibit_access, only: [:show, :edit, :create, :destroy]
   def new
     @user = User.new
   end
