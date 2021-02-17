@@ -1,5 +1,6 @@
 class PromotionsController < ApplicationController
   before_action :set_store, only: [:new, :create, :index]
+  before_action :prohibit_access, only: [:new, :create]
 
   def index
     @promotions = @store.promotions
@@ -20,6 +21,7 @@ class PromotionsController < ApplicationController
       render :new
     end
   end
+
   private
   def set_store
     @store = Store.find(params[:store_id])
@@ -27,5 +29,11 @@ class PromotionsController < ApplicationController
 
   def promotion_params
     params.require(:promotion).permit(:title, :content, :store_id)
+  end
+
+  def prohibit_access
+    if @store != @current_user
+      redirect_to stores_path
+    end
   end
 end
