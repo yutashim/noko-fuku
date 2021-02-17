@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
   def new
+    user_login?
   end
 
   def store_login
+    user_login?
   end
 
   def create

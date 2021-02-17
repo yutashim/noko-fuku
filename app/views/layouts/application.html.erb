@@ -12,6 +12,9 @@
 
   <body class="m-4">
     login_user: <%= current_user.class %>
+    <% if @current_user %>
+      <%= link_to 'ログアウト', session_path(123), method: :delete %>
+    <% end %>
     <hr>
     <%= yield %>
   </body>
