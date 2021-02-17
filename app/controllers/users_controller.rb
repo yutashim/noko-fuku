@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :current_user
   before_action :set_user
   before_action :prohibit_access, only: [:show]
   def new

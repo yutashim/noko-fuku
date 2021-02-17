@@ -1,5 +1,6 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
+  before_action :prohibit_access, only: [:mypage]
 
   def index
     @stores = Store.all
@@ -12,7 +13,6 @@ class StoresController < ApplicationController
   end
 
   def mypage
-    @store = Store.find(params[:store_id])
     @favorite_stores = @store.following_stores
   end
 
@@ -56,5 +56,12 @@ class StoresController < ApplicationController
     params.require(:store).permit(
       :name, :email, :password, :password_confirmation, :icon, :icon_cache, :postcode, :prefecture, :city, :street_address
     )
+  end
+
+  def prohibit_access
+    @store = Store.find(params[:store_id])
+    if @current_user != @store
+      redirect_to stores_path
+    end
   end
 end
