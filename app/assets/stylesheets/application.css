@@ -22,9 +22,13 @@
  }
 
  td, form {
-   background-color: rgba(245,245,245,0.7);
+   background-color: rgba(245,245,245,0.8);
  }
 
  form {
-   border: 2px solid black;
+   border: 2px solid #f5deb3;
  }
+
+.btn-container {
+  text-align: center;
+}
