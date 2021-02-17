@@ -1,0 +1,20 @@
+<h4>お名前: <%= @user.name %></h4>
+<%= link_to 'プロフィールを編集', edit_user_path(@user.id) %>
+
+<p>お気に入りしたお店</p>
+<div id="favorite_stores">
+  <% @stores.each do |store| %>
+    <%= link_to (image_tag(store.icon.url, size: '40x30')),
+        store_promotions_path(store.id), remote: true
+    %>
+  <% end %>
+  <%= link_to 'お店を探しにいく', stores_path %>
+</div>
+<hr>
+<% if @stores.present? %>
+  <div id="store_promotions">
+    <%= render 'promotions/index', store: @stores.first, promotions: @stores.first.promotions %>
+  </div>
+<% else %>
+  お気に入りしたお店はありません
+<% end %>

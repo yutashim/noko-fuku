@@ -1,0 +1,7 @@
+<% @stores.each do |store| %>
+  <div class="#">
+    <%= image_tag(store.icon.url, size: '150x110') %>
+    <%= store.name %>
+    <%= link_to '詳しく見てみる', store_path(store.id) %>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<%= link_to '退会する', user_path(user.id), method: :delete %><br>
+<%= form_with(model: user, local: true) do |form| %>
+  <div class="#">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="#">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="#">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+  <div class="#">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+  <%= form.submit %>
+<% end %>

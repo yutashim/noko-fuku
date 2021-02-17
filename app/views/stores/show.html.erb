@@ -1,0 +1,27 @@
+<%= @store.name %>
+<% if current_user && @current_user != @store %>
+  <div id="favorite_field">
+    <%= render 'follow_form', store: @store, current_user: @current_user %>
+  </div>
+<% end %>
+
+<% if @store.icon.url %>
+  <%= image_tag(@store.icon.url, size: '400x330') %>
+<% else %>
+  <%= image_tag('https://placehold.jp/400x300.png') %>
+<% end %>
+<hr>
+<% @promotions.each do |prom| %>
+  <p>
+    <%= prom.title %>
+    <%= prom.content %>
+  </p>
+<% end %>
+<hr>
+<h4 class="notice" style="color: green"></h4>
+<div class="comments_area">
+  <%= render 'comments/index', comments: @comments %>
+</div>
+<% if current_user && current_user.class == User %>
+  <%= render 'comments/form', store: @store, comment: @new_comment %>
+<% end %>

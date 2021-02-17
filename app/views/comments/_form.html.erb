@@ -1,0 +1,7 @@
+<%= form_with(model: [store, comment]) do |form| %>
+  <div id="comment-form">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: "comment_input"%>
+  </div>
+  <%= form.submit %>
+<% end %>

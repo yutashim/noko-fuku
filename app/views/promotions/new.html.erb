@@ -1,0 +1,11 @@
+<%= form_with(model: @promotion, local: true, url: store_promotions_path) do |form| %>
+  <div class="promotion_field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="promotion_field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+  <%= form.submit 'post' %>
+<% end %>

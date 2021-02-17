@@ -1,0 +1,66 @@
+<%= link_to '退会する', store_path(store.id), method: :delete %><br>
+<%= form_with(model: store, local: true, class:'m-3') do |form| %>
+  <% if store.errors.any? %>
+    <% store.errors.full_messages do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+  <table>
+    <tr class="store_field">
+      <td><%= form.label :name %></td>
+      <td><%= form.text_field :name %></td>
+    </tr>
+    <tr class="store_field">
+      <td><%= form.label :email %></td>
+      <td><%= form.text_field :email %></td>
+    </tr>
+    <tr class="store_field">
+      <td><%= form.label :password %></td>
+      <td><%= form.text_field :password %></td>
+    </tr>
+    <tr class="store_field">
+      <td><%= form.label :password_confirmation %></td>
+      <td><%= form.password_field :password_confirmation %></td>
+    </tr>
+    <tr class="store_field">
+      <td><%= form.label :icon %></td>
+      <td><%= form.file_field :icon %></td>
+    </tr>
+    <tr class="store_field">
+      <td><%= form.label :introduction %></td>
+      <td><%= form.text_area :introduction %></td>
+    </tr>
+    <tr class="store_field">
+      <td><%= form.label :postcode %></td>
+      <td><%= form.text_field :postcode, id: 'postcode' %></td>
+    </tr>
+    <tr class="store_field">
+      <td><%= form.label :prefecture %></td>
+      <td><%= form.text_field :prefecture, id: 'address1' %></td>
+    </tr>
+    <tr class="store_field">
+      <td><%= form.label :city %></td>
+      <td><%= form.text_field :city, id: 'address2' %></td>
+    </tr>
+    <tr class="store_field">
+      <td><%= form.label :street_address %></td>
+      <td><%= form.text_field :street_address, id: 'address3' %></td>
+    </tr>
+  </table>
+  <%= form.submit 'sign up'%>
+<% end %>
+
+<script type="text/javascript">
+$(window).ready( function() {
+  $('#postcode').jpostal({
+    postcode : [
+      '#postcode',
+    ],
+    address : {
+      '#address1'  : '%3',
+      '#address2'  : '%4',
+      '#address3'  : '%5'
+    }
+  });
+});
+</script>

@@ -1,0 +1,8 @@
+<% promotions.each do |promotion| %>
+  <div class="#">
+    <%= link_to "#{store.name}", store_path(store.id)%>
+    <%= promotion.title %><br>
+    <%= promotion.content %>
+    <hr>
+  </div>
+<% end %>
