@@ -1,26 +1,22 @@
-<h4>お名前: <%= @store.name %></h4>
-
-<% if current_user && @current_user == @store %>
-  <div class="#">
-    <%= link_to 'プロフィールを編集する', edit_store_path(@store.id) %>
-    <%= link_to '広告を投稿する', new_store_promotion_path(@store.id) %>
+<div class="my-page jumbotron">
+  <h2 class="mb-3"><%= @store.name %>さんのマイページ</h2>
+  <p>お気に入りしたお店</p>
+  <div id="favorite_stores" class="nav nav-tabs">
+    <% @favorite_stores.each do |store| %>
+      <%= link_to (image_tag(store.icon.url, size: '50x40', class: 'nav-item rounded-circle mx-2')),
+          store_promotions_path(store.id), remote: true
+      %>
+    <% end %>
+    <%= link_to 'お店を探しにいく', stores_path, class: 'nav-item btn btn-info ml-3' %>
+    <%= link_to 'プロフィールを編集する', edit_store_path(@store.id), class: 'nav-item btn btn-success ml-3' %>
+    <%= link_to '広告を投稿する', new_store_promotion_path(@store.id), class: 'nav-item btn btn-success ml-3' %>
   </div>
-<% end %>
-
-<p>お気に入りしたお店</p>
-<div id="favorite_stores">
-  <% @favorite_stores.each do |store| %>
-    <%= link_to (image_tag(store.icon.url, size: '40x30')),
-        store_promotions_path(store.id), remote: true
-    %>
+  <hr>
+  <% if @favorite_stores.present? %>
+    <div id="store_promotions">
+      <%= render 'promotions/index', store: @favorite_stores.first, promotions: @favorite_stores.first.promotions %>
+    </div>
+  <% else %>
+    お気に入りしたお店はありません
   <% end %>
-  <%= link_to 'お店を探しにいく', stores_path %>
 </div>
-<hr>
-<% if @favorite_stores.present? %>
-  <div id="store_promotions">
-    <%= render 'promotions/index', store: @favorite_stores.first, promotions: @favorite_stores.first.promotions %>
-  </div>
-<% else %>
-  お気に入りしたお店はありません
-<% end %>

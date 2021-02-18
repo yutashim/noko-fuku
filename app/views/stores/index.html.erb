@@ -1,7 +1,29 @@
-<% @stores.each do |store| %>
-  <div class="#">
-    <%= image_tag(store.icon.url, size: '150x110') %>
-    <%= store.name %>
-    <%= link_to '詳しく見てみる', store_path(store.id) %>
-  </div>
-<% end %>
+<table>
+  <% @stores.each do |store| %>
+    <tr class="#">
+      <td><%= image_tag(store.icon.url, size: '150x130') %></td>
+      <td>
+        <% if store.prefecture && store.city %>
+          <p>場所: <%= store.prefecture + ' ' + store.city %></p>
+        <% else %>
+          <p>場所: 登録されていません</p>
+        <% end %>
+        店名: <%= store.name %><br>
+      </td>
+      <td>
+        <%= link_to '詳しく見てみる', store_path(store.id), class: 'btn btn-success' %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<style>
+  table {
+    margin: 0 auto;
+  }
+  tr {
+    border: 2px solid #f5deb3;
+  }
+  td {
+    padding: 2rem 3rem;
+  }
+</style>

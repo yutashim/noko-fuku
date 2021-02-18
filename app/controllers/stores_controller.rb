@@ -60,7 +60,7 @@ class StoresController < ApplicationController
   end
 
   def prohibit_access
-    @store = Store.find(params[:store_id]) if !@store
+    @store = Store.find(params[:store_id]) if action_name == 'mypage'
     if @current_user != @store
       redirect_to stores_path
     end

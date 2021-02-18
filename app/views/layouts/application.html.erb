@@ -11,10 +11,8 @@
   </head>
 
   <body class="m-4">
-    login_user: <%= current_user.class %>
-    <% if @current_user %>
-      <%= link_to 'ログアウト', session_path(123), method: :delete %>
-    <% end %>
+    <%= render 'layouts/header'%>
+    <p>login_user: <%= current_user.class %><p>
     <hr>
     <%= yield %>
   </body>

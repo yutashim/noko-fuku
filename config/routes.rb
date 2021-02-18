@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/', to: 'sessions#home'
   resources :sessions, only: [:new, :create, :destroy]
   get '/store_login', to: 'sessions#store_login'
   resources :stores do

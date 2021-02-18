@@ -1,11 +1,13 @@
-<%= form_with(model: @promotion, local: true, url: store_promotions_path) do |form| %>
-  <div class="promotion_field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+<%= form_with(model: @promotion, local: true, url: store_promotions_path, class: 'w-75 p-4 mx-auto') do |form| %>
+  <div class="form-group ml-3">
+    <%= form.label :title %><br>
+    <%= form.text_field :title, class: 'w-75' %>
   </div>
-  <div class="promotion_field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+  <div class="form-group ml-3">
+    <%= form.label :content %><br>
+    <%= form.text_area :content, class: 'w-75', style: 'height: 180px;' %>
   </div>
-  <%= form.submit 'post' %>
+  <div class="btn-container">
+    <%= form.submit 'post', class: 'btn btn-primary' %>
+  </div>
 <% end %>

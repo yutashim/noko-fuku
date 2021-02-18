@@ -14,3 +14,37 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   background-image: url("/assets/top_bgimage.jpeg");
+   background-size: cover;
+   font-family:;
+   font-weight: bolder;
+ }
+
+ td, .introduction, .promotions, .comments_area, .my-page, form {
+   background-color: rgba(220,220,220,0.7);
+ }
+
+ img, form {
+   border: 1px solid lightgray;
+ }
+
+.btn-container {
+  text-align: center;
+}
+
+.promotions {
+  height: 10rem;
+  overflow: scroll;
+}
+
+.comments_area {
+  height: 7rem;
+  width: 80%;
+  overflow: scroll;
+}
+
+h4, h5 {
+  margin: 1rem;
+}

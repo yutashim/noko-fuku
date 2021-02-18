@@ -3,14 +3,16 @@
   store: <%= Store.first.email %>
 </div>
 <hr>
-<%= form_with(scope: session, url: sessions_path, local: true) do |f| %>
-  <div class="#">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+<%= form_with(scope: session, url: sessions_path, local: true, class: 'w-75 p-4 mx-auto' ) do |f| %>
+  <div class="form-group ml-3">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: 'w-75' %>
   </div>
-  <div class="#">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="form-group ml-3">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, class: 'w-75' %>
   </div>
-  <%= f.submit 'sign in'%>
+  <div class="btn-container">
+    <%= f.submit 'ログイン', class: 'btn btn-primary' %>
+  </div>
 <% end %>
