@@ -4,8 +4,8 @@
     <div id="comment_<%= c_id%>">
       <%= cmt.content %>
       <% if cmt.user == @current_user %>
-        <%= link_to '編集する', edit_store_comment_path(cmt.store_id, cmt.id), remote: true %>
-        <%= link_to '削除する', store_comment_path(cmt.store_id, cmt.id), method: :delete, remote: true %>
+        <%= link_to '編集', edit_store_comment_path(cmt.store_id, cmt.id), remote: true %>
+        <%= link_to '削除', store_comment_path(cmt.store_id, cmt.id), method: :delete, remote: true %>
       <% end %>
     </div>
   <% end %>

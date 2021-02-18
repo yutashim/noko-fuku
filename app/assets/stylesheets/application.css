@@ -21,14 +21,29 @@
    font-weight: 500;
  }
 
- td, form {
+ td, form, img, .introduction, .promotions, .comments_area {
    background-color: rgba(245,245,245,0.8);
  }
 
- form {
-   border: 2px solid #f5deb3;
+ form, img, .promotions, .comments_area, .introduction {
+   border: 1px solid lightgray;
  }
 
 .btn-container {
   text-align: center;
+}
+
+.promotions {
+  height: 10rem;
+  overflow: scroll;
+}
+
+.comments_area {
+  height: 7rem;
+  width: 80%;
+  overflow: scroll;
+}
+
+h4, h5 {
+  margin: 1rem;
 }

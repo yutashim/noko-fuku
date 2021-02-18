@@ -1,27 +1,35 @@
-<%= @store.name %>
 <% if current_user && @current_user != @store %>
-  <div id="favorite_field">
+  <div id="favorite_field" class="btn btn-outline-primary m-1">
     <%= render 'follow_form', store: @store, current_user: @current_user %>
   </div>
 <% end %>
-
-<% if @store.icon.url %>
-  <%= image_tag(@store.icon.url, size: '400x330') %>
-<% else %>
-  <%= image_tag('https://placehold.jp/400x300.png') %>
-<% end %>
+<h4>お店の名前: <%= @store.name %></h4>
+<h5>住所: <%= @store.prefecture.to_s + @store.city.to_s + @store.street_address.to_s %></h5>
+<div class="container">
+  <div class="row">
+    <%= image_tag(@store.icon.url, class:'col-5 mr-3') %>
+    <div class='col-6 introduction'>
+      お店の紹介:<br>
+      <%= @store.introduction %>
+    </div>
+  </div>
+</div>
 <hr>
-<% @promotions.each do |prom| %>
-  <p>
-    <%= prom.title %>
-    <%= prom.content %>
-  </p>
-<% end %>
+<div class="promotions">
+  <p>投稿された広告</p>
+  <% @promotions.each do |prom| %>
+    <p>
+      <%= prom.title %>
+      <%= prom.content %>
+    </p>
+  <% end %>
+</div>
 <hr>
 <h4 class="notice" style="color: green"></h4>
 <div class="comments_area">
   <%= render 'comments/index', comments: @comments %>
 </div>
+<hr>
 <% if current_user && current_user.class == User %>
   <%= render 'comments/form', store: @store, comment: @new_comment %>
 <% end %>
