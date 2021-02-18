@@ -7,16 +7,16 @@
 <h5>住所: <%= @store.prefecture.to_s + @store.city.to_s + @store.street_address.to_s %></h5>
 <div class="container">
   <div class="row">
-    <%= image_tag(@store.icon.url, class:'col-5 mr-3') %>
+    <%= image_tag(@store.icon.url, class:'col-5 mr-5') %>
     <div class='col-6 introduction'>
-      お店の紹介:<br>
+      <h5>お店の紹介:</h5>
       <%= @store.introduction %>
     </div>
   </div>
 </div>
 <hr>
+<p>投稿されたお知らせ</p>
 <div class="promotions">
-  <p>投稿された広告</p>
   <% @promotions.each do |prom| %>
     <p>
       <%= prom.title %>
@@ -25,6 +25,7 @@
   <% end %>
 </div>
 <hr>
+<p>寄せられたコメント</p>
 <h4 class="notice" style="color: green"></h4>
 <div class="comments_area">
   <%= render 'comments/index', comments: @comments %>

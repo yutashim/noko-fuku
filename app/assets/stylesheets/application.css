@@ -18,15 +18,23 @@
  body {
    background-image: url("/assets/top_bgimage.jpeg");
    background-size: cover;
-   font-weight: 500;
+   font-family:;
+   font-weight: bolder;
  }
 
- td, form, img, .introduction, .promotions, .comments_area {
-   background-color: rgba(245,245,245,0.8);
+ td, form, .introduction, .promotions, .comments_area {
+   /* background-color: rgba(245,245,245,0.8); */
+   background-color: rgba(132,189,132,0.8);
+   color: white;
+
  }
 
- form, img, .promotions, .comments_area, .introduction {
+ img, form {
    border: 1px solid lightgray;
+ }
+
+ .promotions, .comments_area, .introduction {
+   border: 2px solid #f5deb3;
  }
 
 .btn-container {
