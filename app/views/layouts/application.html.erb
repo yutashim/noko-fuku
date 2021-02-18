@@ -13,9 +13,6 @@
   <body class="m-4">
     <%= render 'layouts/header'%>
     <p>login_user: <%= current_user.class %><p>
-    <% if @current_user %>
-      <%= link_to 'ログアウト', session_path(123), method: :delete %>
-    <% end %>
     <hr>
     <%= yield %>
   </body>
