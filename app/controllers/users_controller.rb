@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: [:new]
+  before_action :set_user, except: [:new, :create]
   before_action :prohibit_access, only: [:show, :edit, :create, :destroy]
   def new
     user_login?

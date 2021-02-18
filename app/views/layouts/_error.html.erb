@@ -1,0 +1,10 @@
+<% if cause.errors.any? %>
+  <div id="error_explanation">
+    <h4><%= cause.errors.count %>件のエラーが発生しました:</h4>
+    <ul>
+    <% cause.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

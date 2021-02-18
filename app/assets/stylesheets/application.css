@@ -18,8 +18,15 @@
  body {
    background-image: url("/assets/top_bgimage.jpeg");
    background-size: cover;
-   font-family:;
    font-weight: bolder;
+ }
+
+ .field_with_errors > input, .field_with_errors > textarea {
+   border: tomato 2px solid;
+ }
+
+ #error_explanation > *, .notice {
+   color: crimson;
  }
 
  td, .introduction, .promotions, .comments_area, .my-page, form {

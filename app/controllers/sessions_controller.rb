@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def home
   end
-  
+
   def new
     user_login?
   end
@@ -14,8 +14,13 @@ class SessionsController < ApplicationController
   def create
     key = params.keys.find{ |n| n=~ /.+_session/}.to_sym
     pr = params[key]
-    login(key, pr)
-    redirect_to stores_path
+    if login(key, pr)
+      redirect_to stores_path
+    else
+      flash.now[:notice] = ["ログインできませんでした"]
+      flash.now[:notice] << "メールアドレスかパスワードに誤りが有ります"
+      render :new
+    end
   end
 
   def destroy
