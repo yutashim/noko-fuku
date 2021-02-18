@@ -16,16 +16,3 @@
 //= require jquery/dist/jquery.js
 //= require bootstrap/dist/js/bootstrap.js
 //= require_tree .
-
-$(window).ready( function() {
-  $('#postcode').jpostal({
-    postcode : [
-      '#postcode',
-    ],
-    address : {
-      '#address1'  : '%3',
-      '#address2'  : '%4',
-      '#address3'  : '%5'
-    }
-  });
-});

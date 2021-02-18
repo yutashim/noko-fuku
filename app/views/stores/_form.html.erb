@@ -39,3 +39,17 @@
     <%= form.submit class: 'btn btn-primary'%>
   </div>
 <% end %>
+<script>
+  $(window).ready( function() {
+    $('#postcode').jpostal({
+      postcode : [
+        '#postcode',
+      ],
+      address : {
+        '#address1'  : '%3',
+        '#address2'  : '%4',
+        '#address3'  : '%5'
+      }
+    });
+  });
+</script>

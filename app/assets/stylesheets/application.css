@@ -22,21 +22,12 @@
    font-weight: bolder;
  }
 
- td, form, .introduction, .promotions, .comments_area {
-   background-color: rgba(132,189,132,0.7);
-   color: white;
+ td, .introduction, .promotions, .comments_area, .my-page, form {
+   background-color: rgba(220,220,220,0.7);
  }
 
  img, form {
    border: 1px solid lightgray;
- }
-
- .my-page {
-   background-color: rgba(220,220,220,0.7);
- }
-
- .promotions, .comments_area, .introduction {
-   border: 2px solid #f5deb3;
  }
 
 .btn-container {
