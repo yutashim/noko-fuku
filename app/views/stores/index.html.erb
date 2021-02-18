@@ -4,7 +4,7 @@
       <td><%= image_tag(store.icon.url, size: '150x130') %></td>
       <td>
         <% if store.prefecture && store.city %>
-          <p>場所: <%= store.prefecture + ' ' + store.city %></p>
+          <p>場所: <%= store.prefecture + ' ' + store.city + ' ' + store.street_address %></p>
         <% else %>
           <p>場所: 登録されていません</p>
         <% end %>

@@ -1,0 +1,35 @@
+arr = [1,2,3,4,5]
+arr.length.times do |n|
+  if n < arr.length - 2
+    a = n + 1
+    b = a + 1
+  else
+    a = n - 1
+    b = a - 1
+  end
+  puts "n: #{n}"
+  puts a
+  puts b
+end
+
+Store.count.times do |n|
+  if n < Store.count - 2
+    a = n + 1
+    b = a + 1
+  else
+    a = n - 1
+    b = a - 1
+  end
+  begin
+    StoreFavorite.create(
+      follower: Store.all[n],
+      followerd: Store.all[a]
+    )
+    StoreFavorite.create(
+      follower: Store.all[n],
+      followerd: Store.all[b]
+    )
+  rescue => e
+    puts "#{e.message}"
+  end
+end
