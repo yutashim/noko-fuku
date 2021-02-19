@@ -8,7 +8,7 @@
     password_confirmation: 'password'
   )
   introduction = "#{Faker::Food.dish}, #{Faker::Food.dish}がオススメ！\n是非、お越しください。"
-  locate = Jipcode.locate("245000#{n+1}")[0]
+  locate = Jipcode.locate("#{rand(3..9)}000000")[0]
   Store.create(
     name: "#{name}\'s store",
     email: email,
