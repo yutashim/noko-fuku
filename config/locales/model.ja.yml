@@ -1,0 +1,29 @@
+ja:
+  activerecord:
+    model:
+      comment: コメント
+      promotion: お知らせ
+      store: ストア
+      user: ユーザー
+    attributes:
+      comment:
+        content: 内容
+      promotion:
+        title: タイトル
+        content: 内容
+      store:
+        name: 店名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        icon: 画像
+        introduction: お店の紹介
+        postcode: 郵便番号
+        prefecture: 都道府県
+        city: 市区町村
+        street_address: 番地
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード

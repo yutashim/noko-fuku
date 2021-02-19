@@ -4,6 +4,12 @@
 </div>
 <hr>
 <%= form_with(scope: session, url: sessions_path, local: true, class: 'w-75 p-4 mx-auto' ) do |f| %>
+  <% if flash[:notice] %>
+    <h4 class="notice">
+      <%= flash[:notice][0]%><br>
+      <%= flash[:notice][1]%>
+    </h4>
+  <% end %>
   <div class="form-group ml-3">
     <%= f.label :email %><br>
     <%= f.text_field :email, class: 'w-75' %>

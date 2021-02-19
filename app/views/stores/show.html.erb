@@ -3,6 +3,7 @@
     <%= render 'follow_form', store: @store, current_user: @current_user %>
   </div>
 <% end %>
+<div id="weather"></div>
 <h4>お店の名前: <%= @store.name %></h4>
 <h5>住所: <%= @store.prefecture.to_s + @store.city.to_s + @store.street_address.to_s %></h5>
 <div class="container">
@@ -33,4 +34,33 @@
 <hr>
 <% if current_user && current_user.class == User %>
   <%= render 'comments/form', store: @store, comment: @new_comment %>
+<% end %>
+<% if @store.city.present? && @store.city.match(/.{1,6}[市]/)%>
+<script>
+  $(function() {
+  var API_KEY = "<%= ENV['KEY'] %>"
+  var city = "<%= @store.city.match(/.{1,6}[市]/)[0] %>";
+  var url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
+  $.ajax({
+    url: url,
+    dataType: "json",
+    type: 'GET',
+  })
+  .done(function(data) {
+      var insertHTML = "";
+      var cityName = '<h2>' + data.city.name + '</h2>';
+      var weather = data.list[0].weather[0].main;
+      var icon = data.list[0].weather[0].icon;
+      var insertHTML =
+      '<div>' +
+        'ただ今の天気: ' + weather +
+        '<img class="ml-2 rounded-circle" src="http://openweathermap.org/img/w/' + icon + '.png">' +
+      '</div>';
+      $('#weather').replaceWith(insertHTML);
+    })
+  .fail(function(data) {
+    console.log("失敗しました");
+  });
+});
+</script>
 <% end %>

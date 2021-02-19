@@ -9,6 +9,8 @@ module SessionsHelper
       else
         session[:user_id] = login_user.id
       end
+    else
+      false
     end
   end
 
