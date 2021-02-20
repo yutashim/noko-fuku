@@ -41,7 +41,7 @@
 <% if @store.city.present? && @store.city.match(/.{1,6}[市]/)%>
 <script>
   $(function() {
-  var API_KEY = "<%= ENV['KEY'] %>"
+  var API_KEY = "<%= ENV['API_KEY'] %>"
   var city = "<%= @store.city.match(/.{1,6}[市]/)[0] %>";
   var url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
   $.ajax({
