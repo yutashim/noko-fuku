@@ -15,14 +15,4 @@ class Store < ApplicationRecord
   mount_uploader :icon, StoreIconUploader
   has_secure_password
 
-  private
-  #以下の処理はparamsで受け取った直後に実行
-  #カラムに代入するときに.to_iメソッドが働くから
-  # def ensure_postcode
-  #   puts postcode
-  #   if postcode =~ /^\d{3}-?\d{4}$/
-  #     puts postcode
-  #     postcode.gsub!(/^(\d{3})-?(\d{4})$/, '\1\2')
-  #   end
-  # end
 end

@@ -4,7 +4,7 @@
   <div id="favorite_stores" class="nav nav-tabs ">
     <% @stores.each do |store| %>
       <%= link_to (image_tag(store.icon.url, size: '50x40', class: 'nav-item rounded-circle mx-2')),
-          store_promotions_path(store.id), remote: true
+          store_promotions_path(store.id), remote: true, id: "store_#{store.id}"
       %>
     <% end %>
     <%= link_to 'お店を探しにいく', stores_path, class: 'nav-item btn btn-info ml-3' %>
