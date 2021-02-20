@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
   def create
     @comment = @current_user.comments.build(comment_params)
     @comment.store = @store
-
     respond_to do |format|
       if @comment.save
         flash[:notice] = '投稿しました'

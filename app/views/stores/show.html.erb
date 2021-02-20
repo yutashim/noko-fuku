@@ -33,8 +33,11 @@
 </div>
 <hr>
 <% if current_user && current_user.class == User %>
-  <%= render 'comments/form', store: @store, comment: @new_comment %>
+  <div id="post-comment">
+  <%= render 'comments/form', store: @store, comment: @new_comment, type: 'create' %>
+  </div>
 <% end %>
+
 <% if @store.city.present? && @store.city.match(/.{1,6}[市]/)%>
 <script>
   $(function() {

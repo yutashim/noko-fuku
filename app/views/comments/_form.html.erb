@@ -1,8 +1,8 @@
 <%= form_with(model: [store, comment], class:'w-25 bg-transparent') do |form| %>
   <div id="comment-form">
-    <%= form.text_area :content, id: "comment_input", class:'w-100'%>
-  </div>
-  <div class="btn-container">
-    <%= form.submit class: 'btn btn-success'%>
+    <%= form.text_area :content, id: "comment_input_#{type}", class:'w-100'%>
+    <div class="btn-container">
+      <%= form.submit class: 'btn btn-success'%>
+    </div>
   </div>
 <% end %>

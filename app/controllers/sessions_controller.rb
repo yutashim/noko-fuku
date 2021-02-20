@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
     key = params.keys.find{ |n| n=~ /.+_session/}.to_sym
     pr = params[key]
     if login(key, pr)
+      current_user
       redirect_to stores_path
     else
       flash.now[:notice] = ["ログインできませんでした"]

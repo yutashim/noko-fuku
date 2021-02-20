@@ -1,7 +1,3 @@
-<div>
-  user: <%= User.first.email %><br>
-  store: <%= Store.first.email %>
-</div>
 <hr>
 <%= form_with(scope: session, url: sessions_path, local: true, class: 'w-75 p-4 mx-auto' ) do |f| %>
   <% if flash[:notice] %>
