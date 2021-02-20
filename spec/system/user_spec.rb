@@ -1,8 +1,11 @@
 require 'rails_helper'
 RSpec.describe 'ユーザー管理機能のテスト', type: :system do
+  before do
+    DatabaseCleaner.clean
+  end
   let(:login) do
     visit new_session_path
-    fill_in 'Email', with: 'store_a@email.com'
+    fill_in 'Email', with: 'user_a@email.com'
     fill_in 'Password', with: 'password'
     click_button 'ログイン'
   end
@@ -19,8 +22,8 @@ RSpec.describe 'ユーザー管理機能のテスト', type: :system do
   end
   describe 'ログイン機能、マイページ遷移のテスト' do
     before do
-      @user_a = FactoryBot.create(:store)
-      @user_b = FactoryBot.create(:store_b)
+      @user_a = FactoryBot.create(:user)
+      @user_b = FactoryBot.create(:user_b)
     end
     it '登録済みユーザーはログインできる' do
       visit new_session_path
@@ -28,7 +31,7 @@ RSpec.describe 'ユーザー管理機能のテスト', type: :system do
       fill_in 'Password', with: 'password'
       click_button 'ログイン'
       click_link 'マイページ'
-      expect(page).to have_content 'store_aさんのマイページ'
+      expect(page).to have_content 'user_aさんのマイページ'
     end
     it '自分以外のマイページにアクセスするとお店の一覧ページに飛ばされる' do
       login

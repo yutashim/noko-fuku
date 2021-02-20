@@ -1,11 +1,11 @@
 require 'rails_helper'
 RSpec.describe 'Userモデルに関わる機能のテスト', type: :model do
   let(:set_user) do
-    DatabaseCleaner.clean
     @user = FactoryBot.create(:user)
     @store = FactoryBot.create(:store)
   end
   before do
+    DatabaseCleaner.clean
     set_user
   end
   describe 'バリデーションのテスト' do
