@@ -22,6 +22,7 @@ class StoresController < ApplicationController
   end
 
   def create
+    params[:store][:postcode].gsub!(/\A(\d{3})-?(\d{4})/, '\1\2')
     @store = Store.new(store_params)
     if @store.save
       session[:user_id] = "store_#{@store.id}"
@@ -35,6 +36,7 @@ class StoresController < ApplicationController
   end
 
   def update
+    params[:store][:postcode].gsub!(/\A(\d{3})-?(\d{4})/, '\1\2')
     if @store.update(store_params)
       redirect_to store_path(@store.id)
     else

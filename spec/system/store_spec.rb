@@ -106,4 +106,11 @@ RSpec.describe 'ストア管理機能のテスト', type: :system do
       expect(page).to have_content '内容の入力'
     end
   end
+  describe '天気の表示' do
+    it '所在地の登録があれば天気が表示される' do
+      @store_a = FactoryBot.create(:store, city: '横浜市')
+      visit store_path(@store_a.id)
+      expect(page).to have_content 'ただ今の天気'
+    end
+  end
 end
