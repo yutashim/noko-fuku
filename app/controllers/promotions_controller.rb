@@ -3,7 +3,7 @@ class PromotionsController < ApplicationController
   before_action :prohibit_access, only: [:new, :create]
 
   def index
-    @promotions = @store.promotions
+    @promotions = @store.promotions.order(created_at: :desc)
     respond_to do |format|
       format.js { :index }
     end

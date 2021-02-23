@@ -1,7 +1,8 @@
 <% current_user %>
-  <% comments.each do |cmt| %>
+  <% comments.order(created_at: :desc).each do |cmt| %>
   <% if c_id = cmt.id %>
     <div id="comment_<%= c_id%>">
+      <%= cmt.created_at.strftime("%F %I:%M")%><br>
       <%= cmt.content %>
       <% if cmt.user == @current_user %>
         <%= link_to '編集', edit_store_comment_path(cmt.store_id, cmt.id), remote: true %>

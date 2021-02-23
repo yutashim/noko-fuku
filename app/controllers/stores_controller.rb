@@ -7,8 +7,8 @@ class StoresController < ApplicationController
   end
 
   def show
-    @promotions = @store.promotions
-    @comments = @store.comments.includes(:user)
+    @promotions = @store.promotions.order(created_at: :desc)
+    @comments = @store.comments.includes(:user).order(created_at: :desc)
     @new_comment = @store.comments.build
   end
 

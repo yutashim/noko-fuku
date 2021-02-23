@@ -20,6 +20,7 @@
 <div class="promotions">
   <% @promotions.each do |prom| %>
     <p>
+      <%= prom.created_at.strftime("%F %I:%M")%><br>
       <%= prom.title %>
       <%= prom.content %>
     </p>

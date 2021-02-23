@@ -1,5 +1,6 @@
 <% promotions.each do |promotion| %>
   <div class="#">
+    <%= promotion.created_at.strftime("%F %I:%M")%><br>
     <%= link_to "#{store.name}", store_path(store.id)%>
     <%= promotion.title %><br>
     <%= promotion.content %>
