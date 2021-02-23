@@ -62,7 +62,7 @@ Ruby on Rails 5.2.4
      
  ## カリキュラム内から使用する技術
    
-   * 次のgem, jQueryプラグインを使って、お店の住所の天気を表示、郵便番号から住所の自動入力を実装します。  
-     * https://github.com/taiki45/weather_jp    
+   * 次のWebAPI, jQueryプラグインを使って、お店の住所の天気を表示、郵便番号から住所の自動入力を実装します。  
+     * https://openweathermap.org  
      * https://github.com/ninton/jquery.jpostal.js
 
