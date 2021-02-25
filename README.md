@@ -49,9 +49,6 @@ Ruby on Rails 5.2.4
    * carrierwave
    * mini_magick
    * dotenv-rails
-   * unicorn
-   * mini_racer
-   * capistrano
    
  ## 就職タームから使用する技術
    
