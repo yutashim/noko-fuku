@@ -11,10 +11,8 @@
   </head>
 
   <body class="m-4">
-    store: <%= Store.first.email%><br>
-    user: <%= User.first.email%>
     <%= render 'layouts/header'%>
-    <p>login_user: <%= current_user.class %><p>
+    <p>ログインユーザーの部類: <%= current_user.class %><p>
     <hr>
     <%= yield %>
   </body>

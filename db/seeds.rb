@@ -42,6 +42,7 @@ end
 User.all.each do |user|
   n = Store.count
   3.times do
+    # 重複が発生しても続行
     begin
       UserFavorite.create(
         user: user,
