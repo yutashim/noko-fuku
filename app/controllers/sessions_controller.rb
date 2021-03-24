@@ -3,6 +3,10 @@ class SessionsController < ApplicationController
   def home
   end
 
+  def guest_login
+    render :home
+  end
+
   def new
     user_login?
   end

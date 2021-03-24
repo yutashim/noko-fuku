@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/', to: 'sessions#home'
+  get '/home', to: 'sessions#home'
+  get '/', to: 'sessions#guest_login'
   resources :sessions, only: [:new, :create, :destroy]
   get '/store_login', to: 'sessions#store_login'
   resources :stores do
