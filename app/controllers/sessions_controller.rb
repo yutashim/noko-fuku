@@ -13,9 +13,13 @@ before_action :user_login?, only: [:new, :store_login, :guest_login, :user_guest
   end
 
   def user_guest_login
+    session[:user_id] = User.first.id
+    user_login?
   end
 
   def store_guest_login
+    session[:user_id] = "store_#{Store.first.id}"
+    user_login?
   end
 
   def create
@@ -33,6 +37,6 @@ before_action :user_login?, only: [:new, :store_login, :guest_login, :user_guest
 
   def destroy
     session.delete(:user_id)
-    redirect_to new_session_path
+    redirect_to '/'
   end
 end
