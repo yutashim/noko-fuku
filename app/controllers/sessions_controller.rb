@@ -1,17 +1,21 @@
 class SessionsController < ApplicationController
-
+before_action :user_login?, only: [:new, :store_login, :guest_login, :user_guest_login, :store_guest_login]
   def home
+  end
+
+  def new
+  end
+
+  def store_login
   end
 
   def guest_login
   end
 
-  def new
-    user_login?
+  def user_guest_login
   end
 
-  def store_login
-    user_login?
+  def store_guest_login
   end
 
   def create
