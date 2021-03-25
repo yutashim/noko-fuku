@@ -9,7 +9,7 @@ before_action :user_login?, only: [:new, :store_login, :guest_login, :user_guest
   def store_login
   end
 
-  def guest_login
+  def new_guest_login
   end
 
   def user_guest_login
