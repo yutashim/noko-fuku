@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
   end
 
   def guest_login
-    render :home
   end
 
   def new

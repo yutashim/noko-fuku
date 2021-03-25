@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h1 class="display-4">NOKO-FUKU</h1>
+  <hr class="my-4">
+  <h4>食品ロス削減を目指すアプリです</h4>
+  <h4>廃棄の危機に瀕した食品の売り手と買い手を繋ぎます</h4>
+  <div class='bottom_wrapper mt-5'>
+    <a class="btn btn-primary btn-lg mx-3" href="/sessions/new" role="button">一般ユーザーゲストログイン</a>
+    <a class="btn btn-primary btn-lg mx-3" href="/sessions/new" role="button">お店ユーザーゲストログイン</a>
+  </div>
+</div>
+<style>
+  .jumbotron {
+    background-color: rgba(255,235,205,0.7);
+  }
+  .bottom_wrapper {
+    text-align: center;
+  }
+  .btn {
+    font-size: 1.3rem;
+  }
+</style>
