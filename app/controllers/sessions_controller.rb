@@ -13,12 +13,13 @@ before_action :user_login?, only: [:new, :store_login, :guest_login, :user_guest
   end
 
   def user_guest_login
-    session[:user_id] = User.first.id
+    session[:user_id] = User.find_by(admin: true).id
     user_login?
   end
 
   def store_guest_login
-    session[:user_id] = "store_#{Store.first.id}"
+    guest_id = Store.find_by(guest: true).id
+    session[:user_id] = "store_#{guest_id}"
     user_login?
   end
 
