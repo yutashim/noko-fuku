@@ -23,9 +23,6 @@ module SessionsHelper
   end
 
   def user_login?
-    p 'user_login?'
-    p 'user_login?'
-    p 'user_login?'
     if current_user
       path = "/#{@current_user.class.to_s.downcase}s/#{@current_user.id}"
       redirect_to path
