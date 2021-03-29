@@ -1,2 +1,4 @@
 <%= render 'form', user: @user %>
-<%= link_to '退会する', user_path(@user.id), method: :delete %><br>
+<% unless current_user.admin %>
+  <%= link_to '退会する', user_path(@user.id), method: :delete %><br>
+<% end %>

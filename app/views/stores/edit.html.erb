@@ -1,2 +1,4 @@
 <%= render 'form', store: @store %>
-<%= link_to '退会する', store_path(@store.id), method: :delete %><br>
+<% unless current_user.guest %>
+  <%= link_to '退会する', store_path(@store.id), method: :delete %><br>
+<% end %>
