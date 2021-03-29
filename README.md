@@ -50,15 +50,3 @@ Ruby on Rails 5.2.4
    * mini_magick
    * dotenv-rails
    
- ## 就職タームから使用する技術
-
-   * コメント機能（編集や削除もできること。投稿失敗時にエラーメッセージをAjaxで出力する）
-     * お店に対するコメントで使用します  
-   * フォロー機能  
-     * お店同士のお気に入り機能（同モデル同士でフォロー、フォロワーの関係を生成）で使用します
-
- ## カリキュラム内から使用する技術
-
-   * 次のWebAPI, jQueryプラグインを使って、お店の住所の天気を表示、郵便番号から住所の自動入力を実装します。  
-     * https://openweathermap.org  
-     * https://github.com/ninton/jquery.jpostal.js
