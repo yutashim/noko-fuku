@@ -1,13 +1,25 @@
 class SessionsController < ApplicationController
-
+before_action :user_login?, only: [:new, :store_login, :guest_login, :user_guest_login, :store_guest_login]
   def home
   end
 
   def new
-    user_login?
   end
 
   def store_login
+  end
+
+  def new_guest_login
+  end
+
+  def user_guest_login
+    session[:user_id] = User.find_by(admin: true).id
+    user_login?
+  end
+
+  def store_guest_login
+    guest_id = Store.find_by(guest: true).id
+    session[:user_id] = "store_#{guest_id}"
     user_login?
   end
 
@@ -26,6 +38,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    redirect_to new_session_path
+    redirect_to '/'
   end
 end
